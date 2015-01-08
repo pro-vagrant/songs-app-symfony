@@ -35,8 +35,25 @@
         "doctrine/doctrine-migrations-bundle": "2.1.*@dev",
         "jms/debugging-bundle": "dev-master",
         "knplabs/knp-menu-bundle": "1.1.*@dev",
-        "knplabs/knp-paginator-bundle": "dev-master"
+        "knplabs/knp-paginator-bundle": "dev-master",
+
+        "braincrafted/bootstrap-bundle": "~2.0",
+        "twbs/bootstrap": "3.0.*",
+        "jquery/jquery":  "1.10.*"
     },
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "jquery/jquery",
+                "version": "1.10.2",
+                "dist": {
+                    "url": "http://code.jquery.com/jquery-1.10.2.js",
+                    "type": "file"
+                }
+            }
+        }
+    ],
     "require-dev": {
         "sensio/generator-bundle": "~2.3",
         "phpspec/phpspec": "~2.0"
