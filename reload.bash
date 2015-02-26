@@ -24,7 +24,7 @@ php "${BASEDIR}/app/console" cache:warmup --env=prod
 php "${BASEDIR}/app/console" cache:clear
 php "${BASEDIR}/app/console" cache:warmup
 
-php app/console doctrine:schema:update --force
+php "${BASEDIR}/app/console" doctrine:schema:update --force
 
 sudo chmod -R 0777 /app/symfony2app
 sudo chown -R "${WHOAMI}:${WHOAMI}" /app/symfony2app
