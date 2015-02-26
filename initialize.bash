@@ -26,8 +26,5 @@ sudo mkdir -p /app/symfony2app/app/logs
 sudo mkdir -p /app/symfony2app/app/cache/sessions
 sudo mkdir -p /app/symfony2app/vendor
 
-php "${BASEDIR}/app/console" cache:clear
-php "${BASEDIR}/app/console" cache:warmup
-
 sudo chmod -R 0777 /app/symfony2app
 sudo chown -R "${WHOAMI}:${WHOAMI}" /app/symfony2app
