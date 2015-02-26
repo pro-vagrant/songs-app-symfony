@@ -5,7 +5,7 @@
 # then
 #    exit 1
 
-if [ `whoami` != "vagrant" ] && [ `whoami` != "travis" ];
+if [ `facter virtual` != "virtualbox" ] && [ `whoami` != "travis" ];
 then
     echo The command should be executed within the guest OS!
     exit 1
