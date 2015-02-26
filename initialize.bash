@@ -5,21 +5,29 @@
 # then
 #    exit 1
 
-if [ `facter virtual` != "virtualbox" ] && [ `whoami` != "travis" ];
+if [ `facter virtual` == "virtualbox" ];
 then
+    BASEDIR=/vagrant
+elif [ `whoami` == "travis" ];
+then
+    BASEDIR=`pwd`
+else
     echo The command should be executed within the guest OS!
     exit 1
 fi
 
 WHOAMI=`whoami`
 
-echo "VARIABLE: ${WHOAMI}"
+echo "Initialize WHOAMI: ${WHOAMI}"
+echo "Initialize BASEDIR: ${BASEDIR}"
 
 sudo mkdir -p /app/symfony2app/app/cache
 sudo mkdir -p /app/symfony2app/app/logs
 sudo mkdir -p /app/symfony2app/app/cache/sessions
 sudo mkdir -p /app/symfony2app/vendor
 
+php "${BASEDIR}/app/console" cache:clear
+php "${BASEDIR}/app/console" cache:warmup
+
 sudo chmod -R 0777 /app/symfony2app
 sudo chown -R "${WHOAMI}:${WHOAMI}" /app/symfony2app
-
