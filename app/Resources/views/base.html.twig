@@ -1,23 +1,20 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- Bootstrap -->
-        <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" media="screen">
+<h1>Songs for kids</h1>
+<h4>Symfony application</h4>
 
-        <!-- HTML5 Shim and Respond.js add IE8 support of HTML5 elements and media queries -->
-        {% include 'BraincraftedBootstrapBundle::ie8-support.html.twig' %}
+<ul>
+    <li><a href="{{  path('baa-url') }}">Baa, baa black sheep</a></li>
+    <li><a href="{{  path('sixpence-url') }}">Sing a song of sixpence</a></li>
+    <li><a href="{{  path('hush-url') }}">Hush, little baby</a></li>
+</ul>
 
-    </head>
-    <body>
-        {% block body %}{% endblock %}
+{% block body %}{% endblock %}
 
-        <!-- jQuery (necessary for Bootstraps JavaScript plugins) -->
-        <script src="{{ asset('js/jquery.js') }}"></script>
-        <!-- Include all JavaScripts, compiled by Assetic -->
-        <script src="{{ asset('js/bootstrap.js') }}"></script>
-    </body>
+</body>
 </html>
