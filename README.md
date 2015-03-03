@@ -5,11 +5,11 @@ How to run the application?
 
 Clone the repo:
 
-    $ git clone https://github.com/pro-vagrant/songs-symfony-app.git
+    $ git clone https://github.com/pro-vagrant/songs-app-symfony.git
 
 Enter the directory:
 
-    $ cd songs-symfony-app
+    $ cd songs-app-symfony
 
 Boot VM:
 
